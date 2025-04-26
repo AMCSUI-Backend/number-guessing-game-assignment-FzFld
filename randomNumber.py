@@ -4,7 +4,11 @@ randomNumber = random.randint(1, 100)
 correct = False
 counter = 0
 while(correct == False):
-    guessedNumber = int(input("Please guess a number: "))
+    try:
+        guessedNumber = int(input("Please guess a number: "))
+    except ValueError:
+        print("Please enter a valid integer!⚠️") 
+        continue
     counter += 1
     if(randomNumber < guessedNumber):
         print("خیلی زیاد است!")
